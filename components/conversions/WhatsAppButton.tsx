@@ -19,9 +19,21 @@ export function WhatsAppButton({
   children = "WhatsApp Us",
   className,
 }: Props) {
-  const href = `https://wa.me/${phone.replace(/\D/g, "")}${
+  const cleanPhone = phone.replace(/\D/g, "");
+  const href = `https://wa.me/${cleanPhone}${
     message ? `?text=${encodeURIComponent(message)}` : ""
   }`;
+
+  const handleClick = () => {
+    try {
+      trackEvent("whatsapp_click", {
+        location,
+        service,
+      });
+    } catch (err) {
+      console.error("Analytics error:", err);
+    }
+  };
 
   return (
     <a
@@ -29,12 +41,7 @@ export function WhatsAppButton({
       target="_blank"
       rel="noopener noreferrer"
       className={className}
-      onClick={() =>
-        trackEvent("whatsapp_click", {
-          location,
-          service,
-        })
-      }
+      onClick={handleClick}
     >
       {children}
     </a>

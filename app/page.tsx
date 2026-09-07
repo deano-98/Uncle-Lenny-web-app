@@ -27,8 +27,6 @@ export default function Home() {
             </p>
 
             <h1 className="font-manrope mb-4 text-[clamp(3rem,14vw,5rem)] leading-[1.08] font-bold tracking-[-0.055em] lg:text-[clamp(3.2rem,7vw,6.5rem)]">
-              {/* Safe. Reliable.
-              <br /> */}
               <span className="text-[#ff5b61]">Ready for the school run.</span>
             </h1>
 

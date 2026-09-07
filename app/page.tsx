@@ -47,7 +47,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="hero-trust">
+            <div className="hero-trust lg:hidden">
               <span>
                 <ShieldCheck size={17} /> Safety first
               </span>

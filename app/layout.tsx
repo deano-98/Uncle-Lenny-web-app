@@ -18,16 +18,18 @@ export const metadata: Metadata = {
     "school runs Harare",
     "school bus Harare",
     "student transport Zimbabwe",
-    "Uncle Lenny School Run Services"
+    "Uncle Lenny School Run Services",
   ],
   openGraph: {
     title: "Uncle Lenny School Run Services",
     description: "Safe rides. Happy kids. Peace of mind.",
-    type: "website"
-  }
+    type: "website",
+  },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body>

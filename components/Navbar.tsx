@@ -17,15 +17,17 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/92 backdrop-blur-[16px] border-b border-navy/8">
-      <div className="container-custom h-[78px] flex items-center justify-between">
+    <header className="border-navy/8 sticky top-0 z-50 border-b bg-white/92 backdrop-blur-lg">
+      <div className="container-custom flex h-19.5 items-center justify-between">
         <Link href="/" className="flex items-center gap-2.75">
-          <span className="w-10.5 h-10.5 rounded-[12px] bg-navy text-white grid place-items-center font-manrope font-extrabold">
+          <span className="bg-navy font-manrope grid h-10.5 w-10.5 place-items-center rounded-xl font-extrabold text-white">
             UL
           </span>
           <span className="block">
-            <b className="block font-manrope text-sm tracking-[0.06em]">UNCLE LENNY</b>
-            <small className="block text-[8px] text-red font-extrabold tracking-[0.15em] mt-0.5">
+            <b className="font-manrope block text-sm tracking-[0.06em]">
+              UNCLE LENNY
+            </b>
+            <small className="text-red mt-0.5 block text-[8px] font-extrabold tracking-[0.15em]">
               SCHOOL RUN SERVICES
             </small>
           </span>
@@ -33,9 +35,9 @@ export default function Navbar() {
 
         {/* Links Navigation */}
         <nav
-          className={`lg:flex items-center gap-6.5 text-sm font-semibold ${
+          className={`items-center gap-6.5 text-sm font-semibold lg:flex ${
             open
-              ? "flex flex-col absolute top-[78px] left-[20px] right-[20px] bg-white border border-line rounded-[16px] p-4 shadow-xl text-left"
+              ? "border-line absolute top-19.5 right-5 left-5 flex flex-col rounded-2xl border bg-white p-4 text-left shadow-xl"
               : "hidden lg:flex"
           }`}
         >
@@ -44,13 +46,13 @@ export default function Navbar() {
               key={label}
               href={href}
               onClick={() => setOpen(false)}
-              className="hover:text-red transition-colors py-2 lg:py-0"
+              className="hover:text-red py-2 transition-colors lg:py-0"
             >
               {label}
             </Link>
           ))}
           <a
-            className="bg-red text-white! px-4 py-2.75 rounded-full flex gap-1.75 items-center justify-center font-semibold"
+            className="bg-red flex items-center justify-center gap-1.75 rounded-full px-4 py-2.75 font-semibold text-white!"
             href={WA}
             target="_blank"
             rel="noreferrer"
@@ -61,7 +63,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle Button */}
         <button
-          className="block lg:hidden border-0 bg-transparent p-2"
+          className="block border-0 bg-transparent p-2 lg:hidden"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >

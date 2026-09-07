@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { useEffect } from "react";
 
@@ -18,7 +18,7 @@ export function CampaignTracker() {
 
     sessionStorage.setItem(
       CAMPAIGN_KEY,
-      JSON.stringify({ source, medium, name, term, content })
+      JSON.stringify({ source, medium, name, term, content }),
     );
   }, []);
 

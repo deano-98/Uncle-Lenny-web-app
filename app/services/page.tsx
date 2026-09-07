@@ -1,12 +1,39 @@
 import Link from "next/link";
-import { ArrowRight, BusFront, MapPin, Trophy, Users, CalendarDays } from "lucide-react";
+import {
+  ArrowRight,
+  BusFront,
+  MapPin,
+  Trophy,
+  Users,
+  CalendarDays,
+} from "lucide-react";
 
 const services = [
-  ["Daily School Runs", "Scheduled morning and afternoon transport for students.", "BusFront"],
-  ["School Trips & Excursions", "Comfortable group transportation for educational activities and excursions.", "MapPin"],
-  ["Sports & School Events", "Transport for sporting fixtures, events and extracurricular activities.", "Trophy"],
-  ["Group Vehicle Hire", "Practical transport solutions for organised groups.", "Users"],
-  ["Dedicated School Arrangements", "Discuss longer-term or dedicated vehicle requirements with our team.", "CalendarDays"],
+  [
+    "Daily School Runs",
+    "Scheduled morning and afternoon transport for students.",
+    "BusFront",
+  ],
+  [
+    "School Trips & Excursions",
+    "Comfortable group transportation for educational activities and excursions.",
+    "MapPin",
+  ],
+  [
+    "Sports & School Events",
+    "Transport for sporting fixtures, events and extracurricular activities.",
+    "Trophy",
+  ],
+  [
+    "Group Vehicle Hire",
+    "Practical transport solutions for organised groups.",
+    "Users",
+  ],
+  [
+    "Dedicated School Arrangements",
+    "Discuss longer-term or dedicated vehicle requirements with our team.",
+    "CalendarDays",
+  ],
 ];
 
 const icons = { BusFront, MapPin, Trophy, Users, CalendarDays };
@@ -15,15 +42,19 @@ export default function Services() {
   return (
     <main>
       {/* Page Hero */}
-      <section className="bg-navy text-white py-27.5">
+      <section className="bg-navy py-27.5 text-white">
         <div className="container-custom">
-          <p className="text-xs font-extrabold tracking-[0.18em] text-red mb-5.5">OUR SERVICES</p>
-          <h1 className="text-[clamp(3.2rem,7vw,6.5rem)] tracking-[-0.055em] font-manrope font-bold mb-4">
-            More than the daily<br />
+          <p className="text-red mb-5.5 text-xs font-extrabold tracking-[0.18em]">
+            OUR SERVICES
+          </p>
+          <h1 className="font-manrope mb-4 text-[clamp(3.2rem,7vw,6.5rem)] font-bold tracking-[-0.055em]">
+            More than the daily
+            <br />
             <span className="text-[#ff5b61]">school run.</span>
           </h1>
-          <p className="max-w-[680px] text-[#c5d2e3] text-lg">
-            Flexible transportation solutions for schools, parents and organised groups.
+          <p className="max-w-170 text-lg text-[#c5d2e3]">
+            Flexible transportation solutions for schools, parents and organised
+            groups.
           </p>
         </div>
       </section>
@@ -35,17 +66,21 @@ export default function Services() {
             const Icon = icons[icon as keyof typeof icons];
             return (
               <article
-                className="grid grid-cols-1 md:grid-cols-[60px_1fr_24px] items-center gap-6.25 p-6.25 border border-line rounded-[18px]"
+                className="border-line grid grid-cols-1 items-center gap-6.25 rounded-[18px] border p-6.25 md:grid-cols-[60px_1fr_24px]"
                 key={title}
               >
-                <div className="w-12.5 h-12.5 rounded-[14px] bg-[#edf2f8] text-navy grid place-items-center">
+                <div className="text-navy grid h-12.5 w-12.5 place-items-center rounded-[14px] bg-[#edf2f8]">
                   <Icon size={27} />
                 </div>
                 <div>
-                  <h2 className="text-xl md:text-5xl font-manrope font-bold mb-1">{title}</h2>
-                  <p className="text-sm md:text-lg text-muted m-0 py-3">{text}</p>
+                  <h2 className="font-manrope mb-1 text-xl font-bold md:text-5xl">
+                    {title}
+                  </h2>
+                  <p className="text-muted m-0 py-3 text-sm md:text-lg">
+                    {text}
+                  </p>
                 </div>
-                <ArrowRight className="hidden md:block text-navy" />
+                <ArrowRight className="text-navy hidden md:block" />
               </article>
             );
           })}
@@ -53,14 +88,16 @@ export default function Services() {
       </section>
 
       {/* Dark Transport Plan Banner */}
-      <section className="bg-navy text-white py-26.25">
+      <section className="bg-navy py-26.25 text-white">
         <div className="container-custom text-center">
-          <p className="text-xs font-extrabold tracking-[0.18em] text-white mb-5.5">NEED A TRANSPORT PLAN?</p>
-          <h2 className="text-[clamp(2.2rem,4vw,4rem)] tracking-[-0.04em] font-manrope font-bold max-w-[780px] mx-auto mb-6">
+          <p className="mb-5.5 text-xs font-extrabold tracking-[0.18em] text-white">
+            NEED A TRANSPORT PLAN?
+          </p>
+          <h2 className="font-manrope mx-auto mb-6 max-w-195 text-[clamp(2.2rem,4vw,4rem)] font-bold tracking-[-0.04em]">
             Tell us what you need and we&apos;ll discuss the options.
           </h2>
           <Link
-            className="inline-flex items-center gap-[9px] px-[20px] py-[14px] rounded-[10px] font-bold text-sm bg-red text-white hover:bg-red2 hover:-translate-y-0.5 transition-transform"
+            className="bg-red hover:bg-red2 inline-flex items-center gap-2.25 rounded-[10px] px-5 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5"
             href="/contact"
           >
             Contact Uncle Lenny <ArrowRight size={18} />

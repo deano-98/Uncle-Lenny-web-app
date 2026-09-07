@@ -18,7 +18,8 @@ export function GoogleAnalytics() {
           window.gtag = gtag;
           gtag('js', new Date());
           gtag('config', '${measurementId}', {
-            anonymize_ip: true
+            anonymize_ip: true,
+            debug_mode: ${process.env.NODE_ENV === "development" ? "true" : "false"}
           });
         `}
       </Script>

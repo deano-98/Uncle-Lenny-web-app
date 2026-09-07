@@ -24,7 +24,11 @@ export function WhatsAppButton({
     message ? `?text=${encodeURIComponent(message)}` : ""
   }`;
 
-  const handleClick = () => {
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    // 1. Prevent default anchor behavior to control navigation cleanly
+    e.preventDefault();
+
+    // 2. Track analytics in a non-blocking block
     try {
       trackEvent("whatsapp_click", {
         location,
@@ -33,16 +37,13 @@ export function WhatsAppButton({
     } catch (err) {
       console.error("Analytics error:", err);
     }
+
+    // 3. Open WhatsApp target window directly
+    window.open(href, "_blank", "noopener,noreferrer");
   };
 
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={className}
-      onClick={handleClick}
-    >
+    <a href={href} className={className} onClick={handleClick}>
       {children}
     </a>
   );

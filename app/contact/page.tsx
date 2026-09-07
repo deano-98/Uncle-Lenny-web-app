@@ -1,7 +1,8 @@
 import { Mail, MapPin, MessageCircle, Phone, Facebook } from "lucide-react";
+import { WhatsAppButton } from "@/components/conversions/WhatsAppButton";
 
-const WA =
-  "https://wa.me/263780927394?text=Hello%20Uncle%20Lenny%2C%20I%27d%20like%20to%20enquire%20about%20school%20transport.";
+const WHATSAPP_MESSAGE =
+  "Hello Uncle Lenny, I'd like to enquire about school transport.";
 
 export default function Contact() {
   return (
@@ -27,11 +28,12 @@ export default function Contact() {
       {/* Contact Cards Grid */}
       <section className="py-27.5">
         <div className="container-custom grid grid-cols-1 gap-4 md:grid-cols-2">
-          <a
+          <WhatsAppButton
+            phone="263780927394"
+            message={WHATSAPP_MESSAGE}
+            location="contact_whatsapp_card"
+            service="school_transport"
             className="border-line bg-navy flex min-h-47.5 flex-col items-start rounded-[20px] border p-8 text-white"
-            href={WA}
-            target="_blank"
-            rel="noreferrer"
           >
             <MessageCircle className="text-red mb-6.25" size={30} />
             <span className="text-xs font-extrabold tracking-[0.14em] text-[#c4d0df] uppercase">
@@ -43,7 +45,7 @@ export default function Contact() {
             <small className="mt-2 text-[#c4d0df]">
               Fastest way to enquire or request a quote.
             </small>
-          </a>
+          </WhatsAppButton>
 
           <div className="border-line flex min-h-47.5 flex-col items-start rounded-[20px] border p-8">
             <Phone className="text-red mb-6.25" size={30} />
@@ -100,14 +102,15 @@ export default function Contact() {
             <li>Required days and times</li>
             <li>Type or number of vehicles needed</li>
           </ul>
-          <a
+          <WhatsAppButton
+            phone="263780927394"
+            message={WHATSAPP_MESSAGE}
+            location="contact_quote"
+            service="school_transport"
             className="bg-red hover:bg-red2 inline-flex items-center gap-2.25 rounded-[10px] px-5 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5"
-            href={WA}
-            target="_blank"
-            rel="noreferrer"
           >
             <MessageCircle size={18} /> Send enquiry on WhatsApp
-          </a>
+          </WhatsAppButton>
         </div>
       </section>
     </main>

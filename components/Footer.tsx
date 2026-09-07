@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Facebook, MessageCircle, Phone } from "lucide-react";
-
-const WA = "https://wa.me/263780927394";
+import { WhatsAppButton } from "@/components/conversions/WhatsAppButton";
 
 export default function Footer() {
   return (
@@ -66,14 +65,14 @@ export default function Footer() {
           <h4 className="font-manrope mb-1 text-sm font-bold tracking-wider text-white uppercase">
             Contact
           </h4>
-          <a
-            href={WA}
-            target="_blank"
-            rel="noreferrer"
+          <WhatsAppButton
+            phone="263780927394"
+            location="footer"
+            service="school_transport"
             className="inline-flex items-center gap-2 text-[14px] text-[#94a3b8] transition-colors hover:text-white"
           >
             <MessageCircle size={15} className="text-red" /> WhatsApp
-          </a>
+          </WhatsAppButton>
           <a
             href="tel:+263780927394"
             className="inline-flex items-center gap-2 text-[14px] text-[#94a3b8] transition-colors hover:text-white"

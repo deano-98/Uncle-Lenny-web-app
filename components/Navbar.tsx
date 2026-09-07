@@ -3,8 +3,7 @@
 import Link from "next/link";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { useState } from "react";
-
-const WA = "https://wa.me/263780927394";
+import { WhatsAppButton } from "@/components/conversions/WhatsAppButton";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -51,14 +50,14 @@ export default function Navbar() {
               {label}
             </Link>
           ))}
-          <a
+          <WhatsAppButton
+            phone="263780927394"
+            location="navbar"
+            service="school_transport"
             className="bg-red flex items-center justify-center gap-1.75 rounded-full px-4 py-2.75 font-semibold text-white!"
-            href={WA}
-            target="_blank"
-            rel="noreferrer"
           >
             <MessageCircle size={16} /> WhatsApp
-          </a>
+          </WhatsAppButton>
         </nav>
 
         {/* Mobile Toggle Button */}

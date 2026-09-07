@@ -7,9 +7,10 @@ import {
   ShieldCheck,
   CalendarDays,
 } from "lucide-react";
+import { WhatsAppButton } from "@/components/conversions/WhatsAppButton";
 
-const WA =
-  "https://wa.me/263780927394?text=Hello%20Uncle%20Lenny%2C%20our%20school%20would%20like%20to%20discuss%20transportation.";
+const WHATSAPP_MESSAGE =
+  "Hello Uncle Lenny, our school would like to discuss transportation.";
 
 export default function Schools() {
   return (
@@ -29,14 +30,15 @@ export default function Schools() {
             A dependable transportation partner for daily school runs, trips and
             organised school travel.
           </p>
-          <a
+          <WhatsAppButton
+            phone="263780927394"
+            message={WHATSAPP_MESSAGE}
+            location="schools_hero"
+            service="school_transport"
             className="bg-red hover:bg-red2 inline-flex items-center gap-2.25 rounded-[10px] px-5 py-3.5 text-sm font-bold text-white transition-transform hover:-translate-y-0.5"
-            href={WA}
-            target="_blank"
-            rel="noreferrer"
           >
             <MessageCircle size={18} /> Request a Quote
-          </a>
+          </WhatsAppButton>
         </div>
       </section>
 
@@ -131,14 +133,15 @@ export default function Schools() {
           <h2 className="font-manrope mx-auto mb-6 max-w-195 text-[clamp(2.2rem,4vw,4rem)] font-bold tracking-[-0.04em]">
             Let&apos;s talk about your transport requirements.
           </h2>
-          <a
+          <WhatsAppButton
+            phone="263780927394"
+            message={WHATSAPP_MESSAGE}
+            location="schools_cta"
+            service="school_transport"
             className="text-navy inline-flex items-center gap-2.25 rounded-[10px] bg-white px-5 py-3.5 text-sm font-bold transition-transform hover:-translate-y-0.5"
-            href={WA}
-            target="_blank"
-            rel="noreferrer"
           >
             <MessageCircle size={18} /> WhatsApp our team
-          </a>
+          </WhatsAppButton>
         </div>
       </section>
     </main>
